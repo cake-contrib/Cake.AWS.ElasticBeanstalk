@@ -1,5 +1,6 @@
 ﻿using Amazon;
 using Amazon.Runtime;
+using Amazon.ElasticBeanstalk;
 
 namespace Cake.AWS.ElasticBeanstalk
 {

@@ -14,12 +14,10 @@
     <copyright>Copyright 2016</copyright>
 	<iconUrl>https://raw.githubusercontent.com/cake-build/graphics/master/png/cake-medium.png</iconUrl>
     <tags>Cake AWS ElasticBeanstalk</tags>
-	
-	   <dependencies>
-           <dependency id="Cake.Core" version="0.16.1.0" />
-           <dependency id="AWSSDK.Core" version="3.3.0.0" />
-           <dependency id="AWSSDK.S3" version="3.3.0.0" />           
-       </dependencies>
-	
+	<dependencies>
+        <dependency id="Cake.Core" version="0.16.1.0" />
+        <dependency id="AWSSDK.Core" version="3.1.11" />
+        <dependency id="AWSSDK.S3" version="3.1.5.5" />       
+    </dependencies>	
   </metadata>
 </package>

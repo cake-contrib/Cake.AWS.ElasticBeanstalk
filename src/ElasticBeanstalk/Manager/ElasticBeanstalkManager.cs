@@ -102,7 +102,7 @@ namespace Cake.AWS.ElasticBeanstalk
                     ApplicationName = applicationName,
                     AutoCreateApplication = autoCreateApplication,
                     Description = description,
-                    Process = true,
+                    //Process = true,
                     VersionLabel = versionLabel,
                     SourceBundle = new S3Location
                     {

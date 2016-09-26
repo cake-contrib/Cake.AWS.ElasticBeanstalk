@@ -1,14 +1,13 @@
 ﻿using Cake.Core;
 using Cake.Core.Annotations;
 
+
 namespace Cake.AWS.ElasticBeanstalk
-{
+{    
     /// <summary>
     /// Contains Cake aliases for configuring Amazon Elastic Load Balancers
     /// </summary>
     [CakeAliasCategory("AWS")]
-    [CakeNamespaceImport("Amazon")]
-    [CakeNamespaceImport("Amazon.ElasticBeanstalk")]
     public static class ElasticBeanstalkAliases
     {
         private static IElasticBeanstalkManager CreateManager(this ICakeContext context)
