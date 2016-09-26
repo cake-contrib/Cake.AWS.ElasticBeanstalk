@@ -10,14 +10,18 @@
     <projectUrl>https://github.com/mathieukempe/Cake.AWS.ElasticBeanstalk</projectUrl>    
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>$description$</description>
-    <releaseNotes>First version</releaseNotes>	
+    <releaseNotes>Fixed issues of dependencies</releaseNotes>	
     <copyright>Copyright 2016</copyright>
 	<iconUrl>https://raw.githubusercontent.com/cake-build/graphics/master/png/cake-medium.png</iconUrl>
     <tags>Cake AWS ElasticBeanstalk</tags>
 	<dependencies>
         <dependency id="Cake.Core" version="0.16.1.0" />
         <dependency id="AWSSDK.Core" version="3.1.11" />
-        <dependency id="AWSSDK.S3" version="3.1.5.5" />       
-    </dependencies>	
+        <dependency id="AWSSDK.ElasticBeanstalk" version="3.1.5.5" />       
+    </dependencies>		
   </metadata>
+  <files>
+      <file src="bin\release\AWSSDK.Core.dll" target="lib/net45" />
+      <file src="bin\release\AWSSDK.ElasticBeanstalk.dll" target="lib/net45" />      
+   </files>
 </package>
