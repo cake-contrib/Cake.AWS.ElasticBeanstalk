@@ -1,12 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Amazon;
+﻿using Amazon;
 using Amazon.Runtime;
 
-namespace Cake.Aws.ElasticBeanstalk.Settings
+namespace Cake.AWS.ElasticBeanstalk
 {
     public class ElasticBeanstalkSettings
     {

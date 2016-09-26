@@ -7,10 +7,11 @@
     <ProjectGuid>{96BE50C5-8430-4E51-AD70-FB5EB80D91DA}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Cake.Aws.ElasticBeanstalk</RootNamespace>
-    <AssemblyName>Cake.Aws.ElasticBeanstalk</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <RootNamespace>Cake.AWS.ElasticBeanstalk</RootNamespace>
+    <AssemblyName>Cake.AWS.ElasticBeanstalk</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>

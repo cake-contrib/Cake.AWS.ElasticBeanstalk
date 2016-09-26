@@ -6,12 +6,20 @@
     <title>$title$</title>
     <authors>$author$</authors>
     <owners>$author$</owners>
-    <licenseUrl>https://github.com/mathieukempe/Cake.Aws.ElasticBeanstalk/blob/master/LICENSE</licenseUrl>
-    <projectUrl>https://github.com/mathieukempe/Cake.Aws.ElasticBeanstalk</projectUrl>    
+    <licenseUrl>https://github.com/mathieukempe/Cake.AWS.ElasticBeanstalk/blob/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/mathieukempe/Cake.AWS.ElasticBeanstalk</projectUrl>    
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>$description$</description>
     <releaseNotes>First version</releaseNotes>	
     <copyright>Copyright 2016</copyright>
-    <tags>Cake.Aws.ElasticBeanstalk</tags>
+	<iconUrl>https://raw.githubusercontent.com/cake-build/graphics/master/png/cake-medium.png</iconUrl>
+    <tags>Cake AWS ElasticBeanstalk</tags>
+	
+	   <dependencies>
+           <dependency id="Cake.Core" version="0.16.1.0" />
+           <dependency id="AWSSDK.Core" version="3.3.0.0" />
+           <dependency id="AWSSDK.S3" version="3.3.0.0" />           
+       </dependencies>
+	
   </metadata>
 </package>

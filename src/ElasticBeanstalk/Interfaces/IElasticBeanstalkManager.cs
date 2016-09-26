@@ -1,6 +1,5 @@
-﻿using Cake.Aws.ElasticBeanstalk.Settings;
-
-namespace Cake.Aws.ElasticBeanstalk.Interfaces
+﻿
+namespace Cake.AWS.ElasticBeanstalk
 {
     public interface IElasticBeanstalkManager
     {

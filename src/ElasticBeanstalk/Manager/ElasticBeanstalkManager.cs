@@ -1,12 +1,10 @@
 ﻿using System;
 using Amazon.ElasticBeanstalk;
 using Amazon.ElasticBeanstalk.Model;
-using Cake.Aws.ElasticBeanstalk.Interfaces;
-using Cake.Aws.ElasticBeanstalk.Settings;
 using Cake.Core;
 using Cake.Core.Diagnostics;
 
-namespace Cake.Aws.ElasticBeanstalk.Manager
+namespace Cake.AWS.ElasticBeanstalk
 {
     public class ElasticBeanstalkManager : IElasticBeanstalkManager
     {

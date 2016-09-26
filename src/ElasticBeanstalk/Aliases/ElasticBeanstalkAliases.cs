@@ -1,10 +1,7 @@
-﻿using Cake.Aws.ElasticBeanstalk.Interfaces;
-using Cake.Aws.ElasticBeanstalk.Manager;
-using Cake.Aws.ElasticBeanstalk.Settings;
-using Cake.Core;
+﻿using Cake.Core;
 using Cake.Core.Annotations;
 
-namespace Cake.Aws.ElasticBeanstalk.Aliases
+namespace Cake.AWS.ElasticBeanstalk
 {
     /// <summary>
     /// Contains Cake aliases for configuring Amazon Elastic Load Balancers
