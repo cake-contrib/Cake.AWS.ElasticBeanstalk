@@ -15,13 +15,9 @@
 	<iconUrl>https://raw.githubusercontent.com/cake-build/graphics/master/png/cake-medium.png</iconUrl>
     <tags>Cake AWS ElasticBeanstalk</tags>
 	<dependencies>
-        <dependency id="Cake.Core" version="0.16.1.0" />
-        <dependency id="AWSSDK.Core" version="3.1.11" />
-        <dependency id="AWSSDK.ElasticBeanstalk" version="3.1.5.5" />       
+        <dependency id="Cake.Core" version="0.23.0" />
+        <dependency id="AWSSDK.Core" version="3.3.18.2" />
+        <dependency id="AWSSDK.ElasticBeanstalk" version="3.3.6.1" />       
     </dependencies>		
-  </metadata>
-  <files>
-      <file src="bin\release\AWSSDK.Core.dll" target="lib/net45" />
-      <file src="bin\release\AWSSDK.ElasticBeanstalk.dll" target="lib/net45" />      
-   </files>
+  </metadata>  
 </package>
