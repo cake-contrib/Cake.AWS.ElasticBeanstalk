@@ -21,12 +21,13 @@ namespace Cake.AWS.ElasticBeanstalk
         [CakeAliasCategory("ElasticBeanstalk")]
         public static bool CreateApplicationVersion(this ICakeContext context, string applicationName, string description, string versionLabel, string s3Bucket, string s3Key, bool autoCreateApplication, ElasticBeanstalkSettings settings)
         {
-             return context.CreateManager().CreateApplicationVersion("", 
-                "", 
-                "", 
-                "", 
-                "",
-                true, settings);
+            var manager = context.CreateManager();
+            return manager.CreateApplicationVersion(applicationName,                    
+                description, 
+                versionLabel,
+                s3Bucket, 
+                s3Key, 
+                autoCreateApplication, settings);
         }
 
     }
