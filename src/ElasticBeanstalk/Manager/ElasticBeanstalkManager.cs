@@ -125,7 +125,45 @@ namespace Cake.AWS.ElasticBeanstalk
             _Log.Verbose("Successfully created new application version '{0}' for application '{1}'", versionLabel, applicationName);
             return true;
         }
-      
+
+
+        public bool DeployApplicationVersion(string applicationName, string environmentName, string versionLabel, ElasticBeanstalkSettings settings)
+        {
+            if (string.IsNullOrEmpty(applicationName))
+            {
+                throw new ArgumentNullException("applicationName");
+            }
+
+            if (string.IsNullOrEmpty(environmentName))
+            {
+                throw new ArgumentNullException("environmentName");
+            }
+
+            if (string.IsNullOrEmpty(versionLabel))
+            {
+                throw new ArgumentNullException("versionLabel");
+            }
+
+            try
+            {
+                var client = GetClient(settings);
+                client.UpdateEnvironment(new UpdateEnvironmentRequest()
+                {
+                    ApplicationName = applicationName,
+                    EnvironmentName = environmentName,
+                    VersionLabel = versionLabel
+                });
+            }
+            catch (Exception ex)
+            {
+                _Log.Error("Failed to deploy application version '{0}'", ex.Message);
+                return false;
+            }
+
+            _Log.Verbose("Successfully deployed application version '{0}' for environment '{1}' in application '{2}'", versionLabel, environmentName, applicationName);
+            return true;
+        }
+
     }
 
 }
