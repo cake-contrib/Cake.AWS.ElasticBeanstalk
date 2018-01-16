@@ -9,5 +9,10 @@ namespace Cake.AWS.ElasticBeanstalk
             string s3Bucket,
             string s3Key, 
             bool autoCreateApplication, ElasticBeanstalkSettings settings);
+
+        bool DeployApplicationVersion(string applicationName,
+            string environmentName,
+            string versionLabel,
+            ElasticBeanstalkSettings settings);
     }
 }
