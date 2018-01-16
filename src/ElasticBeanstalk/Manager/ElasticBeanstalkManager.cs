@@ -57,6 +57,11 @@ namespace Cake.AWS.ElasticBeanstalk
                     throw new ArgumentNullException("settings.SecretKey");
                 }
 
+                if(!String.IsNullOrEmpty(settings.SessionToken))
+                {
+                    return new AmazonElasticBeanstalkClient(settings.AccessKey, settings.SecretKey, settings.SessionToken, settings.Region);
+                }
+
                 return new AmazonElasticBeanstalkClient(settings.AccessKey, settings.SecretKey, settings.Region);
             }
             else
