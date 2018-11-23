@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading.Tasks;
 using Amazon.ElasticBeanstalk;
 using Amazon.ElasticBeanstalk.Model;
 using Cake.Core;
@@ -57,6 +58,11 @@ namespace Cake.AWS.ElasticBeanstalk
                     throw new ArgumentNullException("settings.SecretKey");
                 }
 
+                if (!String.IsNullOrEmpty(settings.SessionToken))
+                {
+                    return new AmazonElasticBeanstalkClient(settings.AccessKey, settings.SecretKey, settings.SessionToken, settings.Region);
+                }
+
                 return new AmazonElasticBeanstalkClient(settings.AccessKey, settings.SecretKey, settings.Region);
             }
             else
@@ -66,7 +72,7 @@ namespace Cake.AWS.ElasticBeanstalk
         }
 
 
-        public bool CreateApplicationVersion(string applicationName, string description, string versionLabel, string s3Bucket, string s3Key, bool autoCreateApplication, ElasticBeanstalkSettings settings)
+        public async Task<bool> CreateApplicationVersionAsync(string applicationName, string description, string versionLabel, string s3Bucket, string s3Key, bool autoCreateApplication, ElasticBeanstalkSettings settings)
         {
             if (string.IsNullOrEmpty(applicationName))
             {
@@ -97,7 +103,7 @@ namespace Cake.AWS.ElasticBeanstalk
             try
             {
                 var client = GetClient(settings);
-                client.CreateApplicationVersion(new CreateApplicationVersionRequest
+                await client.CreateApplicationVersionAsync(new CreateApplicationVersionRequest
                 {
                     ApplicationName = applicationName,
                     AutoCreateApplication = autoCreateApplication,
@@ -120,7 +126,45 @@ namespace Cake.AWS.ElasticBeanstalk
             _Log.Verbose("Successfully created new application version '{0}' for application '{1}'", versionLabel, applicationName);
             return true;
         }
-      
+
+
+        public async Task<bool> DeployApplicationVersionAsync(string applicationName, string environmentName, string versionLabel, ElasticBeanstalkSettings settings)
+        {
+            if (string.IsNullOrEmpty(applicationName))
+            {
+                throw new ArgumentNullException("applicationName");
+            }
+
+            if (string.IsNullOrEmpty(environmentName))
+            {
+                throw new ArgumentNullException("environmentName");
+            }
+
+            if (string.IsNullOrEmpty(versionLabel))
+            {
+                throw new ArgumentNullException("versionLabel");
+            }
+
+            try
+            {
+                var client = GetClient(settings);
+                await client.UpdateEnvironmentAsync(new UpdateEnvironmentRequest()
+                {
+                    ApplicationName = applicationName,
+                    EnvironmentName = environmentName,
+                    VersionLabel = versionLabel
+                });
+            }
+            catch (Exception ex)
+            {
+                _Log.Error("Failed to deploy application version '{0}'", ex.Message);
+                return false;
+            }
+
+            _Log.Verbose("Successfully deployed application version '{0}' for environment '{1}' in application '{2}'", versionLabel, environmentName, applicationName);
+            return true;
+        }
+
     }
 
 }
