@@ -7,8 +7,8 @@
     <Version>1.3.5</Version>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
     <PackageIconUrl>https://cdn.rawgit.com/cake-contrib/graphics/a5cf0f881c390650144b2243ae551d5b9f836196/png/cake-contrib-medium.png</PackageIconUrl>
-    <PackageLicenseUrl>https://github.com/williamabradley/Cake.AWS.ElasticBeanstalk/blob/master/LICENSE</PackageLicenseUrl>
-    <PackageProjectUrl>https://github.com/williamabradley/Cake.AWS.ElasticBeanstalk</PackageProjectUrl>
+    <PackageLicenseUrl>https://github.com/mathieukempe/Cake.AWS.ElasticBeanstalk/blob/master/LICENSE</PackageLicenseUrl>
+    <PackageProjectUrl>https://github.com/mathieukempe/Cake.AWS.ElasticBeanstalk</PackageProjectUrl>
     <AssemblyName>Cake.AWS.ElasticBeanstalk</AssemblyName>
     <RootNamespace>Cake.AWS.ElasticBeanstalk</RootNamespace>
     <Authors>Mathieu Kempe, dstiert, WilliamABradley</Authors>
