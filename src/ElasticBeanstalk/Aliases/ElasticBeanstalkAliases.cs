@@ -1,6 +1,6 @@
 ﻿using Cake.Core;
 using Cake.Core.Annotations;
-
+using System.Threading.Tasks;
 
 namespace Cake.AWS.ElasticBeanstalk
 {    
@@ -19,10 +19,10 @@ namespace Cake.AWS.ElasticBeanstalk
 
         [CakeMethodAlias]
         [CakeAliasCategory("ElasticBeanstalk")]
-        public static bool CreateApplicationVersion(this ICakeContext context, string applicationName, string description, string versionLabel, string s3Bucket, string s3Key, bool autoCreateApplication, ElasticBeanstalkSettings settings)
+        public static Task<bool> CreateApplicationVersionAsync(this ICakeContext context, string applicationName, string description, string versionLabel, string s3Bucket, string s3Key, bool autoCreateApplication, ElasticBeanstalkSettings settings)
         {
             var manager = context.CreateManager();
-            return manager.CreateApplicationVersion(applicationName,                    
+            return manager.CreateApplicationVersionAsync(applicationName,                    
                 description, 
                 versionLabel,
                 s3Bucket, 
@@ -30,5 +30,15 @@ namespace Cake.AWS.ElasticBeanstalk
                 autoCreateApplication, settings);
         }
 
+        [CakeMethodAlias]
+        [CakeAliasCategory("ElasticBeanstalk")]
+        public static Task<bool> DeployApplicationVersionAsync(this ICakeContext context, string applicationName, string environmentName, string versionLabel, ElasticBeanstalkSettings settings)
+        {
+            var manager = context.CreateManager();
+            return manager.DeployApplicationVersionAsync(applicationName,
+                environmentName,
+                versionLabel,
+                settings);
+        }
     }
 }
