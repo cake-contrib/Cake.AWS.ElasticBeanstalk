@@ -15,7 +15,7 @@ Task("restore")
     .IsDependentOn("clean")
     .Does(() =>
 {
-    DotNetCoreRestore("./ElasticBeanstalk.sln", new DotNetCoreRestoreSettings
+    DotNetCoreRestore("./Cake.AWS.ElasticBeanstalk.sln", new DotNetCoreRestoreSettings
     {
         LockedMode = true,
     });
@@ -25,7 +25,7 @@ Task("build")
     .IsDependentOn("restore")
     .DoesForEach(new[] { "Debug", "Release" }, (configuration) =>
 {
-    DotNetCoreBuild("./ElasticBeanstalk.sln", new DotNetCoreBuildSettings
+    DotNetCoreBuild("./Cake.AWS.ElasticBeanstalk.sln", new DotNetCoreBuildSettings
     {
         Configuration = configuration,
         NoRestore = true,
@@ -62,7 +62,7 @@ Task("pack")
 {
     var releaseNotes = $"https://github.com/cake-contrib/Cake.AWS.ElasticBeanstalk/releases/tag/v{buildVersion.Version}";
 
-    DotNetCorePack("./src/ElasticBeanstalk/ElasticBeanstalk.csproj", new DotNetCorePackSettings
+    DotNetCorePack("./src/Cake.AWS.ElasticBeanstalk/Cake.AWS.ElasticBeanstalk.csproj", new DotNetCorePackSettings
     {
         Configuration = "Release",
         NoRestore = true,

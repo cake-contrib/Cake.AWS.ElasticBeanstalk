@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
+    <TargetFrameworks>net5.0;netstandard2.0;net461</TargetFrameworks>
     <RootNamespace>Cake.AWS.ElasticBeanstalk</RootNamespace>
 
     <AssemblyName>Cake.AWS.ElasticBeanstalk</AssemblyName>
@@ -37,7 +37,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Cake.Core" Version="0.33.0" PrivateAssets="All" />
+    <PackageReference Include="Cake.Core" Version="1.0.0" PrivateAssets="All" />
 
     <PackageReference Include="AWSSDK.Core" Version="3.5.3.8" />
     <PackageReference Include="AWSSDK.ElasticBeanstalk" Version="3.5.2.36" />
