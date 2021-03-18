@@ -7,16 +7,24 @@ using Cake.Core.Diagnostics;
 
 namespace Cake.AWS.ElasticBeanstalk
 {
+    /// <summary>
+    /// The Elastic Beanstalk Manager
+    /// </summary>
     public class ElasticBeanstalkManager : IElasticBeanstalkManager
     {
         private readonly ICakeEnvironment _Environment;
         private readonly ICakeLog _Log;
 
         /// <summary>
-        /// If the manager should output progrtess events to the cake log
+        /// If the manager should output progress events to the cake log
         /// </summary>
         public bool LogProgress { get; set; }
 
+        /// <summary>
+        /// Creates an instance of ElasticBeanstalkManager
+        /// </summary>
+        /// <param name="environment"></param>
+        /// <param name="log"></param>
         public ElasticBeanstalkManager(ICakeEnvironment environment, ICakeLog log)
         {
             if (environment == null)
@@ -71,7 +79,7 @@ namespace Cake.AWS.ElasticBeanstalk
             }
         }
 
-
+        /// <inheritdoc/>
         public async Task<bool> CreateApplicationVersionAsync(string applicationName, string description, string versionLabel, string s3Bucket, string s3Key, bool autoCreateApplication, ElasticBeanstalkSettings settings)
         {
             if (string.IsNullOrEmpty(applicationName))
@@ -127,7 +135,7 @@ namespace Cake.AWS.ElasticBeanstalk
             return true;
         }
 
-
+        /// <inheritdoc/>
         public async Task<bool> DeployApplicationVersionAsync(string applicationName, string environmentName, string versionLabel, ElasticBeanstalkSettings settings)
         {
             if (string.IsNullOrEmpty(applicationName))
@@ -164,7 +172,5 @@ namespace Cake.AWS.ElasticBeanstalk
             _Log.Verbose("Successfully deployed application version '{0}' for environment '{1}' in application '{2}'", versionLabel, environmentName, applicationName);
             return true;
         }
-
     }
-
 }

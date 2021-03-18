@@ -3,6 +3,9 @@ using Amazon.Runtime;
 
 namespace Cake.AWS.ElasticBeanstalk
 {
+    /// <summary>
+    /// The Elastic Beanstalk settings
+    /// </summary>
     public class ElasticBeanstalkSettings
     {
         /// <summary>
@@ -32,6 +35,9 @@ namespace Cake.AWS.ElasticBeanstalk
         /// </summary>
         public string BucketName { get; set; }
 
+        /// <summary>
+        /// Creates an instance of ElasticBeanstalkSettings
+        /// </summary>
         public ElasticBeanstalkSettings()
         {
             Region = RegionEndpoint.USEast1;

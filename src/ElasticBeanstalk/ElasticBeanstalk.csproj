@@ -2,29 +2,47 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <PackageId>Cake.AWS.ElasticBeanstalkTools</PackageId>
-    <PackageVersion>1.3.5</PackageVersion>
-    <Version>1.3.5</Version>
-    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
-    <PackageIcon>images\icon.png</PackageIcon>
-    <PackageIconUrl>https://cdn.rawgit.com/cake-contrib/graphics/a5cf0f881c390650144b2243ae551d5b9f836196/png/cake-contrib-medium.png</PackageIconUrl>
-    <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <PackageProjectUrl>https://github.com/mathieukempe/Cake.AWS.ElasticBeanstalk</PackageProjectUrl>
-    <AssemblyName>Cake.AWS.ElasticBeanstalk</AssemblyName>
     <RootNamespace>Cake.AWS.ElasticBeanstalk</RootNamespace>
-    <Authors>Mathieu Kempe, dstiert, WilliamABradley</Authors>
-    <Product>Cake.AWS.ElasticBeanstalkTools</Product>
+
+    <AssemblyName>Cake.AWS.ElasticBeanstalk</AssemblyName>
+    <AssemblyVersion>0.0.1.0</AssemblyVersion>
+    <GenerateAssemblyVersionAttribute>true</GenerateAssemblyVersionAttribute>
+    <GenerateAssemblyFileVersionAttribute>true</GenerateAssemblyFileVersionAttribute>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+
+    <PublishRepositoryUrl>true</PublishRepositoryUrl>
+    <DebugType>portable</DebugType>
+    <IncludeSymbols>true</IncludeSymbols>
+    <EmbedUntrackedSources>true</EmbedUntrackedSources>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+    <AllowedOutputExtensionsInPackageBuildOutputFolder>$(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb</AllowedOutputExtensionsInPackageBuildOutputFolder>
+
+    <NoWarn>$(NoWarn);NU5048</NoWarn>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <TreatSpecificWarningsAsErrors />
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <PackageId>Cake.AWS.ElasticBeanstalk</PackageId>
+    <Version>0.0.1-local</Version>
+    <Authors>mkempe, WilliamABradley, augustoproiete</Authors>
     <Description>Cake-Build addin that extends Cake with AWS Elasticbeanstalk extensions</Description>
+    <PackageTags>cake;aws;elastic-beanstalk;awssdk;beanstalk;elastic;cake-addin;cake-build;addin;script;build</PackageTags>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageIcon>images\icon.png</PackageIcon>
+    <PackageIconUrl>https://cdn.jsdelivr.net/gh/cake-contrib/graphics/png/cake-contrib-medium.png</PackageIconUrl>
+    <PackageProjectUrl>https://github.com/cake-contrib/Cake.AWS.ElasticBeanstalk</PackageProjectUrl>
+    <RepositoryType>git</RepositoryType>
+    <RepositoryUrl>https://github.com/cake-contrib/Cake.AWS.ElasticBeanstalk.git</RepositoryUrl>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="AWSSDK.Core" Version="3.3.31.2" />
-    <PackageReference Include="AWSSDK.ElasticBeanstalk" Version="3.3.12.7" />
-    <PackageReference Include="Cake.Core" Version="0.32.1" />
-    <PackageReference Include="NuGet.CommandLine" Version="4.9.2">
-      <PrivateAssets>all</PrivateAssets>
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
-    </PackageReference>
+    <PackageReference Include="Cake.Core" Version="0.33.0" PrivateAssets="All" />
+
+    <PackageReference Include="AWSSDK.Core" Version="3.5.3.8" />
+    <PackageReference Include="AWSSDK.ElasticBeanstalk" Version="3.5.2.36" />
+
+    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.0.0" PrivateAssets="All" />
   </ItemGroup>
 
   <ItemGroup>
